@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -18,45 +20,64 @@ namespace GroceriesApp.View.UserControls
     /// <summary>
     /// Interaction logic for ClearableTextBox.xaml
     /// </summary>
-    public partial class ClearableTextBox : UserControl
+    public partial class ClearableTextBox : UserControl, INotifyPropertyChanged
     {
         public ClearableTextBox()
         {
+            DataContext = this;
             InitializeComponent();
         }
+
+        public event PropertyChangedEventHandler? PropertyChanged;
 
         private string placeHolder;
 
         public string PlaceHolder
         {
             get { return placeHolder; }
-            set 
-            { 
+            set
+            {
                 placeHolder = value;
-                placeHolderText.Text = placeHolder;
+                OnPropertyChanged();
             }
+        }
+
+        private string inputText;
+
+        public string InputText
+        {
+            get { return inputText; }
+            set { inputText = value;
+                  OnPropertyChanged();  
+                }
         }
 
 
         private void ClearButton_Click(object sender, RoutedEventArgs e)
         {
-            textInput.Clear();
-            textInput.Focus();
+            textInputBox.Clear();
+            textInputBox.Focus();
 
         }
 
         private void TextInput_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (string.IsNullOrEmpty(textInput.Text)){
-                placeHolderText.Visibility = Visibility.Visible;   
+            if (string.IsNullOrEmpty(textInputBox.Text))
+            {
+                placeHolderText.Visibility = Visibility.Visible;
             }
             else
             {
-                placeHolderText.Visibility = Visibility.Hidden;    
+                placeHolderText.Visibility = Visibility.Hidden;
             }
 
 
 
+        }
+
+        private void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

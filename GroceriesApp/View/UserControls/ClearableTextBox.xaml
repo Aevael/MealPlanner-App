@@ -7,8 +7,8 @@
              mc:Ignorable="d" 
              d:DesignHeight="40" d:DesignWidth="250">
     <Grid Background="White">
-        <TextBox Name="textInput" VerticalContentAlignment="Center" FontSize="16" 
-                 FontWeight="Light" Background="Transparent" TextChanged="TextInput_TextChanged"/>
+        <TextBox Name="textInputBox" VerticalContentAlignment="Center" FontSize="16" 
+                 FontWeight="Light" Background="Transparent" Text="{Binding InputText}" TextChanged="TextInput_TextChanged"/>
         <TextBlock Name="placeHolderText" Text="{Binding PlaceHolder}" FontSize="16" FontWeight="Light" 
                    Foreground="DarkGray"  VerticalAlignment="Center" Margin="5,0,0,0"
                    Panel.ZIndex="-1" />

@@ -10,7 +10,19 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
-        <userControls:ClearableTextBox Width="250" Height="45" PlaceHolder="Test"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        
+        
+        <userControls:ClearableTextBox x:Name="input" Width="250" Height="45" PlaceHolder="Test" />
+        <Button Grid.Column="1" Name="btnAdd" Width="50" Content="Add" Click="btnAdd_Click" HorizontalAlignment="Left"/>
+        <Button Grid.Column="1" Name="btnDel" Width="50" Content="Del" Click="btnDel_Click" HorizontalAlignment="Left" Margin="60,0,0,0"/>
+        <Button Grid.Column="1" Name="btnClr" Width="50" Content="Clr" Click="btnClr_Click" HorizontalAlignment="Left" Margin="120,0,0,0"/>
+        <ListView Name="testEntries" Grid.Row="1" ItemsSource="{Binding Entries}" SelectedItem="{Binding SelectedItem}"/>
+        <TextBlock Grid.Row="2" Grid.Column="2" Name="Result" FontSize="16" Text="{Binding input.InputText}"
     </Grid>
 </Window>
