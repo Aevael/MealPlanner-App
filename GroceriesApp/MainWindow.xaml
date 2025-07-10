@@ -5,8 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GroceriesApp"
         mc:Ignorable="d"
+        xmlns:userControls="clr-namespace:GroceriesApp.View.UserControls"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <userControls:ClearableTextBox Width="250" Height="45" PlaceHolder="Test"/>
     </Grid>
 </Window>
