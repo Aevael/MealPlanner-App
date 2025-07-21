@@ -5,24 +5,35 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GroceriesApp"
         mc:Ignorable="d"
+        WindowStyle="None"
         xmlns:userControls="clr-namespace:GroceriesApp.View.UserControls"
-        Title="MainWindow" Height="450" Width="800">
+        MouseLeftButtonDown="Window_MouseLeftButtonDown"    
+        Title="MainWindow" Height="450" Width="800"
+        Background="#333333">
+
+    <WindowChrome.WindowChrome>
+        <WindowChrome GlassFrameThickness="0" CornerRadius="0" CaptionHeight="0"/>
+    </WindowChrome.WindowChrome>
+    
+    
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition/>
+            <RowDefinition Height="30
+                           "/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        
-        
-        <userControls:ClearableTextBox x:Name="input" Width="250" Height="45" PlaceHolder="Test" />
-        <Button Grid.Column="1" Name="btnAdd" Width="50" Content="Add" Click="btnAdd_Click" HorizontalAlignment="Left"/>
-        <Button Grid.Column="1" Name="btnDel" Width="50" Content="Del" Click="btnDel_Click" HorizontalAlignment="Left" Margin="60,0,0,0"/>
-        <Button Grid.Column="1" Name="btnClr" Width="50" Content="Clr" Click="btnClr_Click" HorizontalAlignment="Left" Margin="120,0,0,0"/>
-        <ListView Name="testEntries" Grid.Row="1" ItemsSource="{Binding Entries}" SelectedItem="{Binding SelectedItem}"/>
-        <TextBlock Grid.Row="2" Grid.Column="2" Name="Result" FontSize="16" Text="{Binding input.InputText}"
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button x:Name="closeButton" Content="_" Width="40" Height="30" BorderBrush="Transparent" Background="Transparent" Foreground="White"
+                    Click="CloseButton_Click"/>
+            <Button x:Name="maximizeButton" Content="🗖" Width="40" Height="30" BorderBrush="Transparent" Background="Transparent" Foreground="White"
+                    Click="MaximizeButton_Click"/>
+            <Button x:Name="minimizeButton" Content="X" Width="40" Height="30" BorderBrush="Transparent" Background="Transparent" Foreground="White"
+                    Click="MinimizeButton_Click"/>
+        </StackPanel>
+
+
+
     </Grid>
 </Window>

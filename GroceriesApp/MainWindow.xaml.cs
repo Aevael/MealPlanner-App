@@ -14,7 +14,6 @@ namespace GroceriesApp
         public MainWindow()
         {
             DataContext = this;
-            ObservableCollection<string> entries = new ObservableCollection<string>();
             InitializeComponent();
         }
 
@@ -32,33 +31,40 @@ namespace GroceriesApp
 
         public event PropertyChangedEventHandler? PropertyChanged;
 
-        private ObservableCollection<string> entries;
-
-        public ObservableCollection<string> Entries
-        {
-            get { return entries; }
-            set { entries = value; }
-        }
 
 
-        private void btnAdd_Click(object sender, RoutedEventArgs e)
-        {
-            Entries.Add(input.InputText);
-        }
-
-        private void btnDel_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void btnClr_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
+        
 
         private void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        private void Window_MouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            DragMove();
+        }
+
+        private void CloseButton_Click(object sender, RoutedEventArgs e)
+        {
+            WindowState = WindowState.Minimized;
+        }
+
+        private void MaximizeButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (WindowState == WindowState.Normal)
+            {
+                WindowState = WindowState.Maximized;
+            }
+            else if (WindowState == WindowState.Maximized)
+            {
+                WindowState = WindowState.Normal;
+            }
+        }
+
+        private void MinimizeButton_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
         }
     }
 }
