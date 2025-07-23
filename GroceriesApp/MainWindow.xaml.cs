@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
 using System.Windows;
+using GroceriesApp.View.Windows;
 
 namespace GroceriesApp
 {
@@ -32,7 +33,7 @@ namespace GroceriesApp
         public event PropertyChangedEventHandler? PropertyChanged;
 
 
-
+        
         
 
         private void OnPropertyChanged([CallerMemberName] string propertyName = null)
@@ -45,26 +46,6 @@ namespace GroceriesApp
             DragMove();
         }
 
-        private void CloseButton_Click(object sender, RoutedEventArgs e)
-        {
-            WindowState = WindowState.Minimized;
-        }
-
-        private void MaximizeButton_Click(object sender, RoutedEventArgs e)
-        {
-            if (WindowState == WindowState.Normal)
-            {
-                WindowState = WindowState.Maximized;
-            }
-            else if (WindowState == WindowState.Maximized)
-            {
-                WindowState = WindowState.Normal;
-            }
-        }
-
-        private void MinimizeButton_Click(object sender, RoutedEventArgs e)
-        {
-            Close();
-        }
+        
     }
 }

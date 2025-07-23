@@ -42,15 +42,6 @@ namespace GroceriesApp.View.UserControls
             }
         }
 
-        private string inputText;
-
-        public string InputText
-        {
-            get { return inputText; }
-            set { inputText = value;
-                  OnPropertyChanged();  
-                }
-        }
 
 
         private void ClearButton_Click(object sender, RoutedEventArgs e)

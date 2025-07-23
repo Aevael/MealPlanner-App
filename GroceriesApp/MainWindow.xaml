@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:GroceriesApp"
         mc:Ignorable="d"
         WindowStyle="None"
+        WindowState="{Binding DataContext.WindowState,ElementName=Titlebar}"
         xmlns:userControls="clr-namespace:GroceriesApp.View.UserControls"
         MouseLeftButtonDown="Window_MouseLeftButtonDown"    
         Title="MainWindow" Height="450" Width="800"
@@ -18,21 +19,12 @@
     
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="30
-                           "/>
+            <RowDefinition Height="30"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
         </Grid.ColumnDefinitions>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-            <Button x:Name="closeButton" Content="_" Width="40" Height="30" BorderBrush="Transparent" Background="Transparent" Foreground="White"
-                    Click="CloseButton_Click"/>
-            <Button x:Name="maximizeButton" Content="🗖" Width="40" Height="30" BorderBrush="Transparent" Background="Transparent" Foreground="White"
-                    Click="MaximizeButton_Click"/>
-            <Button x:Name="minimizeButton" Content="X" Width="40" Height="30" BorderBrush="Transparent" Background="Transparent" Foreground="White"
-                    Click="MinimizeButton_Click"/>
-        </StackPanel>
-
+        <userControls:ClearableTextBox Grid.Row="1" Height="40" Width="100"/>
 
 
     </Grid>
