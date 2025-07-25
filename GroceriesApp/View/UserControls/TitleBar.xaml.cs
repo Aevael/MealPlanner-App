@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.Text;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace GroceriesApp.View.UserControls
@@ -8,31 +9,37 @@ namespace GroceriesApp.View.UserControls
     /// </summary>
     public partial class TitleBar : UserControl
     {
-        Window currentWindow = Window.GetWindow(this); 
+
+        Window parentWindow;
+
         public TitleBar()
         {
             InitializeComponent();
-            
+            this.Loaded += new RoutedEventHandler(TitleBar_Loaded);
+        }
+        
+        private void TitleBar_Loaded(object sender, RoutedEventArgs e)
+        {
+            parentWindow = Window.GetWindow(this); 
         }
 
-        
 
         private void CloseButton_Click(object sender, RoutedEventArgs e)
         {
 
-            currentWindow.WindowState = WindowState.Minimized;
+            parentWindow.WindowState = WindowState.Minimized;
         }
 
         private void MaximizeButton_Click(object sender, RoutedEventArgs e)
         {
             
-            if (currentWindow.WindowState == WindowState.Normal)
+            if (parentWindow.WindowState == WindowState.Normal)
             {
-                currentWindow.WindowState = WindowState.Maximized;
+                parentWindow.WindowState = WindowState.Maximized;
             }
-            else if (currentWindow.WindowState == WindowState.Maximized)
+            else if (parentWindow.WindowState == WindowState.Maximized)
             {
-                currentWindow.WindowState = WindowState.Normal;
+                parentWindow.WindowState = WindowState.Normal;
             }
              
             
@@ -40,7 +47,7 @@ namespace GroceriesApp.View.UserControls
 
         private void MinimizeButton_Click(object sender, RoutedEventArgs e)
         {
-            currentWindow.Close();
+            parentWindow.Close();
         }
     }
 }
