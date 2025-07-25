@@ -1,9 +1,11 @@
-﻿using System.Collections.ObjectModel;
+﻿using GroceriesApp.View.UserControls;
+using GroceriesApp.View.Windows;
+using GroceriesApp.ViewModel;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
 using System.Windows;
-using GroceriesApp.View.Windows;
 
 namespace GroceriesApp
 {
@@ -14,31 +16,11 @@ namespace GroceriesApp
     {
         public MainWindow()
         {
-            DataContext = this;
             InitializeComponent();
-        }
+            MainWindowViewModel vm = new MainWindowViewModel();
+            DataContext = vm;
+            
 
-        private string selectedItem;
-
-        public string SelectedItem
-        {
-            get { return selectedItem; }
-            set {
-                    selectedItem = value;
-                    OnPropertyChanged();
-                }
-        }
-
-
-        public event PropertyChangedEventHandler? PropertyChanged;
-
-
-        
-        
-
-        private void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
         private void Window_MouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)

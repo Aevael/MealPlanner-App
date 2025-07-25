@@ -6,7 +6,6 @@
         xmlns:local="clr-namespace:GroceriesApp"
         mc:Ignorable="d"
         WindowStyle="None"
-        WindowState="{Binding DataContext.WindowState,ElementName=Titlebar}"
         xmlns:userControls="clr-namespace:GroceriesApp.View.UserControls"
         MouseLeftButtonDown="Window_MouseLeftButtonDown"    
         Title="MainWindow" Height="450" Width="800"
@@ -17,14 +16,15 @@
     </WindowChrome.WindowChrome>
     
     
-    <Grid>
+    <Grid Height="100" Width="200">
         <Grid.RowDefinitions>
-            <RowDefinition Height="30"/>
-            <RowDefinition/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="30" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
         </Grid.ColumnDefinitions>
-        <userControls:ClearableTextBox Grid.Row="1" Height="40" Width="100"/>
+        <userControls:TitleBar Grid.Row="0" Height="30" Width="200" />
+        <userControls:ClearableTextBox Grid.Row="1" Height="30" Width="100"/>
 
 
     </Grid>
