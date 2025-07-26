@@ -6,18 +6,15 @@
              xmlns:local="clr-namespace:GroceriesApp.View.UserControls"
              mc:Ignorable="d" 
              d:DesignHeight="30" d:DesignWidth="800" >
-    <Grid Background="#333333">
+    <Grid Background="#1E1E1E">
         <Grid.RowDefinitions>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Label x:Name="windowName" HorizontalAlignment="Left" Content="Title" Foreground="White"/>
-        <StackPanel Background="#333333" Orientation="Horizontal" HorizontalAlignment="Right">
-            <Button x:Name="closeButton" Content="_" Width="40" Height="30" BorderBrush="Transparent" Background="Transparent" Foreground="White"
-                Click="CloseButton_Click"/>
-            <Button x:Name="maximizeButton" Content="🗖" Width="40" Height="30" BorderBrush="Transparent" Background="Transparent" Foreground="White"
-                Click="MaximizeButton_Click"/>
-            <Button x:Name="minimizeButton" Content="X" Width="40" Height="30" BorderBrush="Transparent" Background="Transparent" Foreground="White"
-                Click="MinimizeButton_Click" />
+        <Label x:Name="windowName" HorizontalAlignment="Left" VerticalAlignment="Center" Content="Title" Foreground="White"/>
+        <StackPanel Background="#1E1E1E" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Style="{StaticResource TitleBarButton}" x:Name="minimizeButton" Content="_" Click="MinimizeButton_Click"/>
+            <Button Style="{StaticResource TitleBarButton}" x:Name="maximizeButton" Content="🗖" Click="MaximizeButton_Click"/>
+            <Button Style="{StaticResource CloseButton}" x:Name="closeButton" Click="CloseButton_Click"/>
         </StackPanel>
     </Grid>
 </UserControl>

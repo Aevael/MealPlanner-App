@@ -32,7 +32,7 @@ namespace GroceriesApp.View.UserControls
 
         private void MaximizeButton_Click(object sender, RoutedEventArgs e)
         {
-            
+
             if (parentWindow.WindowState == WindowState.Normal)
             {
                 parentWindow.WindowState = WindowState.Maximized;
@@ -41,13 +41,12 @@ namespace GroceriesApp.View.UserControls
             {
                 parentWindow.WindowState = WindowState.Normal;
             }
-             
-            
         }
 
         private void MinimizeButton_Click(object sender, RoutedEventArgs e)
         {
-            parentWindow.Close();
+            //parentWindow.Close();
+            Application.Current.Shutdown();
         }
     }
 }

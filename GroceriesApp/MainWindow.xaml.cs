@@ -26,6 +26,12 @@ namespace GroceriesApp
             DragMove();
         }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            RecipeWindow recipeWindow = new RecipeWindow();
+            recipeWindow.Show();
+        }
+
         
     }
 }

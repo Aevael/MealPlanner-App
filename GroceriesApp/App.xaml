@@ -4,6 +4,12 @@
              xmlns:local="clr-namespace:GroceriesApp"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Styles/ApplicationWindowStyles.xaml"/>
+                <ResourceDictionary Source="/Styles/CloseButtonStyles.xaml"/>
+                <ResourceDictionary Source="/Styles/TitleBarButtonStyles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>
