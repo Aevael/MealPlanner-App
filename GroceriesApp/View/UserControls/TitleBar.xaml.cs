@@ -1,6 +1,7 @@
 ﻿using System.Text;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
 
 namespace GroceriesApp.View.UserControls
 {
@@ -11,6 +12,10 @@ namespace GroceriesApp.View.UserControls
     {
 
         Window parentWindow;
+        Canvas restoreDownIcon;
+        Border restoreDownIconFront;
+        Border restoreDownIconBack;
+        SolidColorBrush restoreDownIconBackground = (SolidColorBrush)new BrushConverter().ConvertFrom("#1E1E1E");
 
         public TitleBar()
         {
@@ -35,11 +40,46 @@ namespace GroceriesApp.View.UserControls
 
             if (parentWindow.WindowState == WindowState.Normal)
             {
+                
                 parentWindow.WindowState = WindowState.Maximized;
+                
+
+                // If restore down icon is null, create it
+                if (restoreDownIcon == null)
+                {
+                    restoreDownIcon = new Canvas
+                    {
+                        Width = 15,
+                        Height = 15
+                    };
+                    restoreDownIconBack = new Border
+                    {
+                        Background = Brushes.Transparent,
+                        Width = 10,
+                        Height = 10,
+                        Margin = new Thickness(3, 1, 0, 0),
+                        BorderBrush = Brushes.White,
+                        BorderThickness = new Thickness(1, 1, 1, 1)
+                    };
+                    restoreDownIconFront = new Border
+                    {
+                        Background = restoreDownIconBackground,
+                        Width = 10,
+                        Height = 10,
+                        Margin = new Thickness(0, 4, 0, 0),
+                        BorderBrush = Brushes.White,
+                        BorderThickness = new Thickness(1, 1, 1, 1)
+                    };
+                    restoreDownIcon.Children.Add(restoreDownIconBack);
+                    restoreDownIcon.Children.Add(restoreDownIconFront);
+                }
+
+                maximizeButtonControl.Content = restoreDownIcon;
             }
             else if (parentWindow.WindowState == WindowState.Maximized)
             {
                 parentWindow.WindowState = WindowState.Normal;
+                maximizeButtonControl.Content = "◻";
             }
         }
 

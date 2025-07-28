@@ -1,4 +1,4 @@
-﻿<Window Style="{StaticResource AppWindow}"
+﻿<Window Style="{StaticResource ApplicationWindow}"
         x:Class="GroceriesApp.View.Windows.RecipeWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"

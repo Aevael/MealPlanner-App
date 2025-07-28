@@ -5,16 +5,25 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:GroceriesApp.View.UserControls"
              mc:Ignorable="d" 
-             d:DesignHeight="30" d:DesignWidth="800" >
+             d:DesignHeight="30" d:DesignWidth="800">
     <Grid Background="#1E1E1E">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="90*"/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Label x:Name="windowName" HorizontalAlignment="Left" VerticalAlignment="Center" Content="Title" Foreground="White"/>
-        <StackPanel Background="#1E1E1E" Orientation="Horizontal" HorizontalAlignment="Right">
-            <Button Style="{StaticResource TitleBarButton}" x:Name="minimizeButton" Content="_" Click="MinimizeButton_Click"/>
-            <Button Style="{StaticResource TitleBarButton}" x:Name="maximizeButton" Content="🗖" Click="MaximizeButton_Click"/>
-            <Button Style="{StaticResource CloseButton}" x:Name="closeButton" Click="CloseButton_Click"/>
+        <Label x:Name="windowName" HorizontalAlignment="Left" VerticalAlignment="Center" Content="Title" Foreground="White" Padding="8,0,0,0"/>
+        <StackPanel Background="#1E1E1E" Orientation="Horizontal" HorizontalAlignment="Right" Grid.Column="1" >
+            <Button Style="{StaticResource TitleBarButton}" x:Name="minimizeButton" Content="-" Click="MinimizeButton_Click" FontSize="20"
+                    />
+            <Button Style="{StaticResource TitleBarButton}" x:Name="maximizeButton"  Click="MaximizeButton_Click">
+                <ContentControl x:Name="maximizeButtonControl" FontSize="14">
+                    ◻
+                </ContentControl>
+            </Button>
+            <Button Style="{StaticResource CloseButton}" x:Name="closeButton" Click="CloseButton_Click" FontSize="14"/>
         </StackPanel>
     </Grid>
 </UserControl>

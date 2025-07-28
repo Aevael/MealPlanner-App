@@ -7,14 +7,11 @@
         xmlns:local="clr-namespace:GroceriesApp"
         mc:Ignorable="d"
         WindowStyle="None"
-        xmlns:userControls="clr-namespace:GroceriesApp.View.UserControls"
-        MouseLeftButtonDown="Window_MouseLeftButtonDown"    
+        xmlns:userControls="clr-namespace:GroceriesApp.View.UserControls" 
         Title="MainWindow" Height="450" Width="1200">
 
 
-    <WindowChrome.WindowChrome>
-        <WindowChrome GlassFrameThickness="0" CornerRadius="0" CaptionHeight="0"/>
-    </WindowChrome.WindowChrome>
+   
 
     <Grid>
         <Grid.RowDefinitions>
