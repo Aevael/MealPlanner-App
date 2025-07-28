@@ -14,7 +14,7 @@
         <Grid.RowDefinitions>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Label x:Name="windowName" HorizontalAlignment="Left" VerticalAlignment="Center" Content="Title" Foreground="White" Padding="8,0,0,0"/>
+        <Label x:Name="windowName" HorizontalAlignment="Left" VerticalAlignment="Center" Content="Title" Foreground="White" Padding="8,0,0,0" FontSize="14"/>
         <StackPanel Background="#1E1E1E" Orientation="Horizontal" HorizontalAlignment="Right" Grid.Column="1" >
             <Button Style="{StaticResource TitleBarButton}" x:Name="minimizeButton" Content="-" Click="MinimizeButton_Click" FontSize="20"
                     />

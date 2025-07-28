@@ -42,7 +42,8 @@ namespace GroceriesApp.View.UserControls
             {
                 
                 parentWindow.WindowState = WindowState.Maximized;
-                
+                parentWindow.BorderThickness = new Thickness(8);
+
 
                 // If restore down icon is null, create it
                 if (restoreDownIcon == null)
@@ -79,6 +80,7 @@ namespace GroceriesApp.View.UserControls
             else if (parentWindow.WindowState == WindowState.Maximized)
             {
                 parentWindow.WindowState = WindowState.Normal;
+                parentWindow.BorderThickness = new Thickness(0);
                 maximizeButtonControl.Content = "◻";
             }
         }

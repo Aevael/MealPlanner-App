@@ -11,11 +11,17 @@ namespace GroceriesApp.Styles
 {
     public partial class ApplicationWindowStyles : ResourceDictionary
     {
-        private void Window_MouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        Window parentWindow;
+        
+        private void getWindow(object sender, RoutedEventArgs e)
         {
             Border border = sender as Border;
-            Window parentWindow = border.Tag as Window;
+            parentWindow = border.Tag as Window;
+        }
+
+        private void Window_MouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
             parentWindow?.DragMove();
-        }    
+        }
     }
 }

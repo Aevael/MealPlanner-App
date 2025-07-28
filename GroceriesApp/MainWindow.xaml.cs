@@ -6,6 +6,8 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
 using System.Windows;
+using System.Runtime.InteropServices;
+using System.Windows.Interop;
 
 namespace GroceriesApp
 {
@@ -14,6 +16,7 @@ namespace GroceriesApp
     /// </summary>
     public partial class MainWindow : Window
     {
+        private bool mRestoreIfMove = false;
         public MainWindow()
         {
             InitializeComponent();
@@ -30,6 +33,9 @@ namespace GroceriesApp
             recipeWindow.Show();
         }
 
-        
+        private void Window_SourceInitialized(object sender, EventArgs e)
+        {
+
+        }
     }
 }
