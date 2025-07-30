@@ -6,8 +6,7 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
 using System.Windows;
-using System.Runtime.InteropServices;
-using System.Windows.Interop;
+
 
 namespace GroceriesApp
 {
@@ -20,6 +19,7 @@ namespace GroceriesApp
         public MainWindow()
         {
             InitializeComponent();
+            WindowStartupLocation = WindowStartupLocation.CenterScreen;
             MainWindowViewModel vm = new MainWindowViewModel();
             DataContext = vm;
             
@@ -30,12 +30,10 @@ namespace GroceriesApp
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             RecipeWindow recipeWindow = new RecipeWindow();
+
             recipeWindow.Show();
         }
 
-        private void Window_SourceInitialized(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

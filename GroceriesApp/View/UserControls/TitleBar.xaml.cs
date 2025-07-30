@@ -16,6 +16,7 @@ namespace GroceriesApp.View.UserControls
         Border restoreDownIconFront;
         Border restoreDownIconBack;
         SolidColorBrush restoreDownIconBackground = (SolidColorBrush)new BrushConverter().ConvertFrom("#1E1E1E");
+        public static String windowTitle = "Dinner Planner";
 
         public TitleBar()
         {
@@ -25,11 +26,12 @@ namespace GroceriesApp.View.UserControls
         
         private void TitleBar_Loaded(object sender, RoutedEventArgs e)
         {
-            parentWindow = Window.GetWindow(this); 
+            parentWindow = Window.GetWindow(this);
+            windowName.Content = windowTitle;   
         }
 
 
-        private void CloseButton_Click(object sender, RoutedEventArgs e)
+        private void MinimizeButton_Click(object sender, RoutedEventArgs e)
         {
 
             parentWindow.WindowState = WindowState.Minimized;
@@ -85,10 +87,9 @@ namespace GroceriesApp.View.UserControls
             }
         }
 
-        private void MinimizeButton_Click(object sender, RoutedEventArgs e)
+        private void CloseButton_Click(object sender, RoutedEventArgs e)
         {
-            //parentWindow.Close();
-            Application.Current.Shutdown();
+            parentWindow.Close();   
         }
     }
 }
