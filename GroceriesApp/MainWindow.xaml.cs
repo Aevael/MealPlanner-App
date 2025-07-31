@@ -15,7 +15,6 @@ namespace GroceriesApp
     /// </summary>
     public partial class MainWindow : Window
     {
-        private bool mRestoreIfMove = false;
         public MainWindow()
         {
             InitializeComponent();
@@ -31,7 +30,7 @@ namespace GroceriesApp
         {
             RecipeWindow recipeWindow = new RecipeWindow();
 
-            recipeWindow.Show();
+            recipeWindow.ShowDialog();
         }
 
         

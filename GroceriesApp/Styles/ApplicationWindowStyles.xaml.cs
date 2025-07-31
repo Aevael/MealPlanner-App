@@ -12,16 +12,18 @@ namespace GroceriesApp.Styles
     public partial class ApplicationWindowStyles : ResourceDictionary
     {
         Window parentWindow;
-        
-        private void getWindow(object sender, RoutedEventArgs e)
-        {
-            Border border = sender as Border;
-            parentWindow = border.Tag as Window;
-        }
+
+
 
         private void Window_MouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-            parentWindow?.DragMove();
+            parentWindow = sender as Window;
+            if (parentWindow.WindowState != WindowState.Maximized)
+            {
+                parentWindow?.DragMove();
+            }
+            
+
         }
     }
 }

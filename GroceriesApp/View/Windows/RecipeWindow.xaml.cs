@@ -11,7 +11,6 @@ namespace GroceriesApp.View.Windows
         public RecipeWindow()
         {
             InitializeComponent();
-            TitleBar.windowTitle = "Recipes";
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
             
         }
