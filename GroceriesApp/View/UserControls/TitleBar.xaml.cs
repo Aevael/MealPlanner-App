@@ -17,6 +17,9 @@ namespace GroceriesApp.View.UserControls
         Border restoreDownIconFront;
         Border restoreDownIconBack;
         SolidColorBrush restoreDownIconBackground = (SolidColorBrush)new BrushConverter().ConvertFrom("#1E1E1E");
+        Point mouseStartingLocation;
+        double windowNormalHeight;
+        double windowNormalWidth;
         
         
 
@@ -30,6 +33,8 @@ namespace GroceriesApp.View.UserControls
         {
             parentWindow = Window.GetWindow(this);
             windowName.Content = parentWindow.Title;   
+            windowNormalHeight = parentWindow.Height;
+            windowNormalWidth = parentWindow.Width;
         }
 
 
@@ -41,6 +46,8 @@ namespace GroceriesApp.View.UserControls
 
         private void MaximizeButton_Click(object sender, RoutedEventArgs e)
         {
+            windowNormalHeight = parentWindow.Height;
+            windowNormalWidth = parentWindow.Width;
             WindowState_Switch();
         }
 
@@ -55,7 +62,9 @@ namespace GroceriesApp.View.UserControls
         {
             if (e.LeftButton == MouseButtonState.Pressed && parentWindow.WindowState == WindowState.Maximized)
             {
-                
+                Point mouseNewLocation = e.GetPosition(parentWindow);
+                parentWindow.Top = getNewTop(mouseNewLocation.Y);
+                parentWindow.Left = getNewLeft(mouseNewLocation.X);
                 WindowState_Switch();
                 parentWindow.DragMove();
             }
@@ -68,6 +77,7 @@ namespace GroceriesApp.View.UserControls
                 parentWindow.WindowState = WindowState.Maximized;
                 parentWindow.BorderThickness = new Thickness(8);
                 MaximizeIcon_Switch();
+                
 
             }
             else if (parentWindow.WindowState == WindowState.Maximized)
@@ -125,10 +135,24 @@ namespace GroceriesApp.View.UserControls
         {
             if (parentWindow.WindowState == WindowState.Maximized)
             {
-               
+               mouseStartingLocation = e.GetPosition(parentWindow);
             }
-            
-            
+        }
+
+        private double getNewTop(double mouseDeltaY)
+        {
+            double mouseYAnchor = mouseStartingLocation.Y;
+            double windowMaximizedHeight = parentWindow.ActualHeight;
+            double newTop = mouseYAnchor - ((mouseYAnchor / windowMaximizedHeight) * windowNormalHeight) + (mouseDeltaY - mouseYAnchor);
+            return newTop;
+        }
+
+        private double getNewLeft(double mouseDeltaX)
+        {
+            double mouseXAnchor = mouseStartingLocation.X;
+            double windowMaximizedWidth = parentWindow.ActualWidth;
+            double newLeft = mouseXAnchor - ((mouseXAnchor / windowMaximizedWidth) * windowNormalWidth) + (mouseDeltaX - mouseXAnchor);
+            return newLeft;
         }
     }
 }
