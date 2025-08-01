@@ -21,7 +21,6 @@ namespace GroceriesApp
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
             MainWindowViewModel vm = new MainWindowViewModel();
             DataContext = vm;
-            
         }
 
         

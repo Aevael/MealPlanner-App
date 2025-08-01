@@ -11,6 +11,7 @@ namespace GroceriesApp.Model
     {
         public string Name { get; set; }
         public string Cuisine { get; set; }
+        public ObservableCollection<string> Ingredients { get; set; }
         public ObservableCollection<string> Steps { get; set; }
     }
 }

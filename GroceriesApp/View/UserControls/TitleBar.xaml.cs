@@ -18,6 +18,7 @@ namespace GroceriesApp.View.UserControls
         Border restoreDownIconBack;
         SolidColorBrush restoreDownIconBackground = (SolidColorBrush)new BrushConverter().ConvertFrom("#1E1E1E");
         
+        
 
         public TitleBar()
         {
@@ -54,6 +55,7 @@ namespace GroceriesApp.View.UserControls
         {
             if (e.LeftButton == MouseButtonState.Pressed && parentWindow.WindowState == WindowState.Maximized)
             {
+                
                 WindowState_Switch();
                 parentWindow.DragMove();
             }
@@ -63,7 +65,6 @@ namespace GroceriesApp.View.UserControls
         {
             if (parentWindow.WindowState == WindowState.Normal)
             {
-
                 parentWindow.WindowState = WindowState.Maximized;
                 parentWindow.BorderThickness = new Thickness(8);
                 MaximizeIcon_Switch();
@@ -118,6 +119,16 @@ namespace GroceriesApp.View.UserControls
             {
                 maximizeButtonControl.Content = "◻";
             }
+        }
+
+        private void TitleBar_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if (parentWindow.WindowState == WindowState.Maximized)
+            {
+               
+            }
+            
+            
         }
     }
 }
