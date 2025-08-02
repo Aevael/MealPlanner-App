@@ -1,8 +1,8 @@
-﻿using GroceriesApp.Model;
-using GroceriesApp.MVVM;
+﻿using MealPlannerApp.Model;
+using MealPlannerApp.MVVM;
 using System.Collections.ObjectModel;
 
-namespace GroceriesApp.ViewModel
+namespace MealPlannerApp.ViewModel
 {
     internal class MainWindowViewModel : ViewModelBase 
     {

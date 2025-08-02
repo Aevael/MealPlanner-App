@@ -1,6 +1,6 @@
-﻿using GroceriesApp.View.UserControls;
-using GroceriesApp.View.Windows;
-using GroceriesApp.ViewModel;
+﻿using MealPlannerApp.View.UserControls;
+using MealPlannerApp.View.Windows;
+using MealPlannerApp.ViewModel;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
@@ -8,7 +8,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Windows;
 
 
-namespace GroceriesApp
+namespace MealPlannerApp
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -28,7 +28,6 @@ namespace GroceriesApp
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             RecipeWindow recipeWindow = new RecipeWindow();
-
             recipeWindow.ShowDialog();
         }
 

@@ -4,7 +4,7 @@ using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Input;
 
-namespace GroceriesApp.View.UserControls
+namespace MealPlannerApp.View.UserControls
 {
     /// <summary>
     /// Interaction logic for TitleBar.xaml
@@ -58,7 +58,7 @@ namespace GroceriesApp.View.UserControls
 
         
 
-        private void TitleBar_MouseMove(object sender, System.Windows.Input.MouseEventArgs e)
+        private void TitleBar_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.LeftButton == MouseButtonState.Pressed && parentWindow.WindowState == WindowState.Maximized)
             {

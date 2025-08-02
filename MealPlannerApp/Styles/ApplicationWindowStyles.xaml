@@ -1,7 +1,7 @@
-﻿<ResourceDictionary x:Class="GroceriesApp.Styles.ApplicationWindowStyles"
+﻿<ResourceDictionary x:Class="MealPlannerApp.Styles.ApplicationWindowStyles"
                     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:userControls="clr-namespace:GroceriesApp.View.UserControls">
+                    xmlns:userControls="clr-namespace:MealPlannerApp.View.UserControls">
     
     <SolidColorBrush x:Key="Window.Static.Background" Color="#1E1E1E"/>
     <Style x:Key="ApplicationWindow" TargetType="{x:Type Window}" >

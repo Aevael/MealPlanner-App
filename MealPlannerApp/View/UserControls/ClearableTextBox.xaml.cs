@@ -15,7 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace GroceriesApp.View.UserControls
+namespace MealPlannerApp.View.UserControls
 {
     /// <summary>
     /// Interaction logic for ClearableTextBox.xaml

@@ -1,7 +1,7 @@
-﻿using GroceriesApp.View.UserControls;
+﻿using MealPlannerApp.View.UserControls;
 using System.Windows;
 
-namespace GroceriesApp.View.Windows
+namespace MealPlannerApp.View.Windows
 {
     /// <summary>
     /// Interaction logic for RecipeWindow.xaml

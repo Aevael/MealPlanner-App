@@ -6,7 +6,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GroceriesApp.MVVM
+namespace MealPlannerApp.MVVM
 {
     internal class ViewModelBase : INotifyPropertyChanged
     {

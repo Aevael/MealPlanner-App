@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GroceriesApp.Model
+namespace MealPlannerApp.Model
 {
     internal class Recipe
     {
