@@ -8,8 +8,7 @@
         mc:Ignorable="d"
         WindowStyle="None"
         xmlns:userControls="clr-namespace:MealPlannerApp.View.UserControls" 
-        Title="Meal Planner" Height="600" Width="1000"
-        >
+        Title="Meal Planner" Height="600" Width="1000">
 
 
    
@@ -22,7 +21,7 @@
         <Grid.ColumnDefinitions>
         </Grid.ColumnDefinitions>
         <userControls:TitleBar  Grid.Row="0" />
-        <Button Grid.Row="1" Height="30" Width="100" Click="Button_Click"/>
+        <DataGrid Grid.Row="1"  Width="400" Height="300" Background="Transparent" Margin="50,137,562,132"  />
 
 
     </Grid>
