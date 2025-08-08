@@ -21,7 +21,10 @@
         <Grid.ColumnDefinitions>
         </Grid.ColumnDefinitions>
         <userControls:TitleBar  Grid.Row="0" />
-        <DataGrid Grid.Row="1"  Width="400" Height="300" Background="Transparent" Margin="50,137,562,132"  />
+        <DataGrid Grid.Row="1"  Width="875" Height="150" Background="Transparent" Margin="50,0,550,400"  />
+        <DataGrid Grid.Row="1"  Width="400" Height="300" Background="Transparent" Margin="50,200,550,150"  />
+        <DataGrid Grid.Row="1"  Width="400" Height="300" Background="Transparent" Margin="500,200,50,150"  />
+        
 
 
     </Grid>
