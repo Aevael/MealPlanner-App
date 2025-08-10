@@ -14,5 +14,6 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <userControls:TitleBar />
+        <DataGrid Grid.Row="1" Background="Transparent" Height="100" Width="200"/>
     </Grid>
 </Window>
