@@ -15,5 +15,6 @@
         </Grid.RowDefinitions>
         <userControls:TitleBar />
         <DataGrid Grid.Row="1" Background="Transparent" Height="100" Width="200"/>
+        <Label Grid.Row="1" Background="Transparent" Content="Recipe" />
     </Grid>
 </Window>
