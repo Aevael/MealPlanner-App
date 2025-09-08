@@ -9,7 +9,7 @@ namespace MealPlannerApp.Model
     internal class Condiment
     {
         string Name;
-        Boolean InStock;
+        Boolean IsStocked;
 
     }
 }
